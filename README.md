@@ -1,5 +1,12 @@
 # Emoji Clicker
 
+A simple full stack application using Typescript, React, Go and Postgres.
+
+Players pick an emoji (their team) to support.
+
+Players click their chosen emoji to collect points, points are shared in
+the team.
+
 ## Building
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -23,3 +30,18 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## TODO
+
+- [x] React Typescript App skeleton
+- [ ] API definition
+- [ ] Backend stubs
+- [ ] Database integration
+- [ ] Release
+- [ ] Discord integration
+
+## WONTDO (probably)
+
+- [ ] Mobile version
+- [ ] Load testing
+- [ ] Security
