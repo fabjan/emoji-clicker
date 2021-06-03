@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   CardBody,
   CardTitle
@@ -7,16 +8,19 @@ import emoji from 'node-emoji';
 
 import Emoji from './Emoji';
 
-type ClickPageProps = {
+type ClickEmojiProps = {
   team: string
 }
 
-const ClickPage = ({ team }: ClickPageProps) => {
+const ClickEmoji = ({ team }: ClickEmojiProps) => {
+  // TODO push clicks to backend
   return (
     <div>
       <Card>
         <CardBody>
-          <Emoji instance={team} size="10em" />
+          <Button color="light">
+            <Emoji instance={team} size="10em" />
+          </Button>
           <CardTitle tag="h5">Go team {emoji.unemojify(team).replaceAll(":", "")}!</CardTitle>
         </CardBody>
       </Card>
@@ -24,4 +28,4 @@ const ClickPage = ({ team }: ClickPageProps) => {
   );
 };
 
-export default ClickPage;
+export default ClickEmoji;
