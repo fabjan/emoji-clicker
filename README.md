@@ -36,7 +36,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - [x] React Typescript App skeleton
 - [x] API definition v1
 - [x] Backend stubs https://github.com/fabjan/mmocg
-- [ ] Deploy backend
+- [x] Deploy backend (see Dockerfile in server repo)
 - [ ] Database integration
 - [ ] Release
 - [ ] Discord integration
