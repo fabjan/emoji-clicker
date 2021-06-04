@@ -34,11 +34,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## TODO
 
 - [x] React Typescript App skeleton
-- [ ] API definition
+- [x] API definition v1
 - [ ] Backend stubs
 - [ ] Database integration
 - [ ] Release
 - [ ] Discord integration
+- [ ] Search team by terms in emoji name (e.g. "heart")
 
 ## WONTDO (probably)
 
