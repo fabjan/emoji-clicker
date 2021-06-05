@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Table } from 'reactstrap';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { Router, RouteComponentProps, Link } from "@reach/router"
 
+import Leaderboard from './Leaderboard';
 import SelectTeam from './SelectTeam';
 import ClickEmoji from './ClickEmoji';
 
@@ -10,42 +11,6 @@ interface SelectorProps extends RouteComponentProps {
   team: string | null;
   setTeam: (s: string | null) => void;
 }
-
-const HighScores = () => {
-
-  // TODO backend data
-  // TODO live updating
-  const teamData = {
-    "🚀": 4711,
-    "🍪": 1337,
-    "🥑": 42,
-  };
-
-  const tableRows = Object.entries(teamData).map(([team, score]) =>
-    <tr>
-      <th scope="row">{score}</th>
-      <td>{team}</td>
-    </tr>
-  );
-
-  return (
-    <div>
-      <h2>High Scores</h2>
-      <Table striped>
-        <thead>
-          <tr>
-            <th>Clicks</th>
-            <th>Team Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tableRows}
-        </tbody>
-      </Table>
-    </div>
-  )
-}
-
 
 const Selector = (props: SelectorProps) => {
   return (
@@ -73,20 +38,24 @@ const Clicker = (props: ClickerProps) => {
   )
 }
 
+const queryClient = new QueryClient({});
+
 const App = () => {
 
   const [team, setTeam] = useState("")
 
   return (
-    <div className="App">
-      <div style={{ padding: "1em" }}>
-        <HighScores />
-        <Router>
-          <Selector path="/" team={team} setTeam={t => setTeam(t ? t : "")} />
-          <Clicker path="clicker" team={team} />
-        </Router>
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <div style={{ padding: "1em" }}>
+          <Leaderboard />
+          <Router>
+            <Selector path="/" team={team} setTeam={t => setTeam(t ? t : "")} />
+            <Clicker path="clicker" team={team} />
+          </Router>
+        </div>
       </div>
-    </div>
+    </QueryClientProvider>
   );
 }
 
