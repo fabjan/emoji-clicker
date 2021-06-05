@@ -39,6 +39,23 @@ See the section about [deployment] for more information.
 
 [deployment]: https://facebook.github.io/create-react-app/docs/deployment
 
+## Deploying
+
+You can use the included Dockerfile to build a simple server using nginx to serve the bundled app.
+
+```shell
+$ export BASEURL=https://your.backend.example.com/api/v1 # or something
+$ docker build -t emoji-clicker:latest --build-arg baseurl="$BASEURL" .
+```
+
+To test locally:
+
+```shell
+$ docker run -it -p9191:80 emoji-clicker 
+```
+
+Tag and push to your favorite registry and deploy it.
+
 ## TODO
 
 - [x] React Typescript App skeleton
