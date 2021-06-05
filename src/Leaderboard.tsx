@@ -4,6 +4,7 @@ import { Table, Spinner } from 'reactstrap';
 import { apiBaseUrl, fetchTimeout } from './Config';
 import { useGetLeaderboard } from './mmocg-client/mmocg';
 import useInterval from './useInterval';
+import TeamName from './TeamName';
 
 const refreshInterval = 5000;
 
@@ -42,7 +43,7 @@ const Leaderboard = () => {
                 .map(({ id, clicks }) =>
                     <tr key={id}>
                         <th scope="row">{clicks}</th>
-                        <td>{id}</td>
+                        <td>{id} <TeamName name={id || ""} /></td>
                     </tr>
                 );
         } else {
@@ -62,7 +63,7 @@ const Leaderboard = () => {
                 <thead>
                     <tr>
                         <th>Clicks</th>
-                        <th>Team Name</th>
+                        <th>Team</th>
                     </tr>
                 </thead>
                 <tbody>

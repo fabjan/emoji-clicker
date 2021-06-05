@@ -6,11 +6,11 @@ import {
   CardSubtitle,
   CardTitle
 } from 'reactstrap';
-import emoji from 'node-emoji';
 
 import { apiBaseUrl } from './Config';
 import { useClick, useUpdateTeam } from './mmocg-client/mmocg';
 import Emoji from './Emoji';
+import TeamName from './TeamName';
 
 type ClickEmojiProps = {
   team: string
@@ -60,7 +60,7 @@ const ClickEmoji = ({ team }: ClickEmojiProps) => {
           <Button color="light" onClick={_ => onEmojiClick()}>
             <Emoji instance={team} size="10em" />
           </Button>
-          <CardTitle tag="h5">Go team {emoji.unemojify(team).replaceAll(":", "")}!</CardTitle>
+          <CardTitle tag="h5">Go team <TeamName name={team} />!</CardTitle>
           <CardSubtitle>{teamClicks} clicks</CardSubtitle>
         </CardBody>
       </Card>
