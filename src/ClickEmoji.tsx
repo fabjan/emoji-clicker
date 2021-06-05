@@ -50,6 +50,7 @@ const ClickEmoji = ({ team }: ClickEmojiProps) => {
 
   const backendTeamClicks = teamStats?.data.clicks;
   if (backendTeamClicks && teamClicks < backendTeamClicks) {
+    // TODO this is not very robust
     setTeamClicks(backendTeamClicks);
   }
 
