@@ -1,11 +1,8 @@
 import { useEffect } from 'react';
 import { Table, Spinner } from 'reactstrap';
 
-import { useGetLeaderboard } from './mmocg-client/mmocg'
-
-// TODO shared config
-const fetchTimeout = 5000;
-const apiBaseUrl = process.env.REACT_APP_BASEURL;
+import { apiBaseUrl, fetchTimeout } from './Config';
+import { useGetLeaderboard } from './mmocg-client/mmocg';
 
 const Leaderboard = () => {
 
