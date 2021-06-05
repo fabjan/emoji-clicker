@@ -3,11 +3,19 @@ import { Table, Spinner } from 'reactstrap';
 
 import { apiBaseUrl, fetchTimeout } from './Config';
 import { useGetLeaderboard } from './mmocg-client/mmocg';
+import useInterval from './useInterval';
+
+const refreshInterval = 5000;
 
 const Leaderboard = () => {
 
     // TODO use a context provider for mocking?
     const { data: leaderboard, refetch, isLoading } = useGetLeaderboard({ axios: { baseURL: apiBaseUrl } });
+
+    // TODO make this smarter than polling
+    useInterval(() => {
+        refetch();
+    }, refreshInterval);
 
     useEffect(() => {
         setTimeout(() => {
@@ -28,7 +36,6 @@ const Leaderboard = () => {
 
     if (!isLoading) {
         if (leaderboard?.status === 200) {
-            // TODO live updating?
             const teamData = leaderboard?.data || [];
             tableRows = teamData
                 .filter(({ id }) => id)
