@@ -62,7 +62,7 @@ Tag and push to your favorite registry and deploy it.
 - [x] API definition v1
 - [x] Stubbed [backend]
 - [x] Deploy backend (see Dockerfile in server repo)
-- [ ] Integrate front and back ends (in progress)
+- [x] Integrate front and back ends
 - [ ] Database integration
 - [ ] Release
 - [ ] Discord integration
