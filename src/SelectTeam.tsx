@@ -12,11 +12,11 @@ const SelectTeam = (props: SelectTeamProps) => {
         props.setTeam(emojiObject.emoji);
     };
 
-    const clear = <Button onClick={_ => props.setTeam(null)} color="light">{props.team}</Button>
+    const changeTeam = <Button onClick={_ => props.setTeam(null)} color="light">Change team</Button>
 
-    // TODO improve team state
+    // TODO improve team state (and select from leaderboard somehow?)
 
-    const pick = <EmojiPicker
+    const picker = <EmojiPicker
         onEmojiClick={onEmojiClick}
         disableSearchBar={true}
         disableSkinTonePicker={true}
@@ -27,8 +27,8 @@ const SelectTeam = (props: SelectTeamProps) => {
     return (
         <div>
             {props.team
-                ? <p>Your team is {clear}</p>
-                : (<><p>Select a team below</p> {pick}</>)
+                ? <p style={{ padding: "1ex 1em" }}>{changeTeam}</p>
+                : (<><p>Select a team below</p> {picker}</>)
             }
         </div>
     )

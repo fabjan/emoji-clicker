@@ -53,6 +53,10 @@ const ClickEmoji = ({ team }: ClickEmojiProps) => {
     setTeamClicks(backendTeamClicks);
   }
 
+  if (!team) {
+    return <></>
+  }
+
   return (
     <>
       <Card>
