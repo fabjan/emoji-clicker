@@ -25,7 +25,6 @@ You will also see any lint errors in the console.
 
 NOTE: you will need a [backend] serving the API on localhost port 5000 for the default settings. You can also deploy it somewhere else and set the environrment variable `REACT_APP_BASEURL` before running `yarn start`.
 
-[backend]: https://github.com/fabjan/mmocg
 
 ### `yarn build`
 
@@ -58,14 +57,13 @@ Tag and push to your favorite registry and deploy it.
 
 ## TODO
 
+Also see the [backend] repo README TODOs.
+
 - [x] React Typescript App skeleton
 - [x] API definition v1
 - [x] Stubbed [backend]
-- [x] Deploy backend (see Dockerfile in server repo)
+- [x] Deploy backend (see Dockerfile in [backend] repo)
 - [x] Integrate front and back ends
-- [ ] Database integration
-- [ ] Release
-- [ ] Discord integration
 - [ ] Improve team selection state
 - [ ] Search team by terms in emoji name (e.g. "heart")
 
@@ -74,3 +72,6 @@ Tag and push to your favorite registry and deploy it.
 - [ ] Mobile version
 - [ ] Load testing
 - [ ] Security
+
+
+[backend]: https://github.com/fabjan/mmocg
